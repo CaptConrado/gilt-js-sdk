@@ -41,7 +41,8 @@
   });
   
   submitKey.click(function() {
-    apiKey = keyField.val();
+    var apiKey = keyField.val();
+    keyField.val('');
     api = new GiltApi( apiKey );
     
     $( '#init' ).fadeOut(function() {
