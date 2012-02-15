@@ -3,11 +3,9 @@ Gilt Groupe JavaScript (jQuery) Public API
 Christopher Young-Zawada
 Copyright Gilt Groupe 2012
 
-This is a jQuery-based implementation of the the Gilt Groupe Public API.  This script allows
-simple access to Gilt Groupe sales and product data using AJAX and returns the data as JSON.
+This is a jQuery-based implementation of the the Gilt Groupe Public API.  This script allows simple access to Gilt Groupe sales and product data using AJAX and returns the data as JSON.
 
-The script can be found at public/javascripts/gilt-js-api.js, while this rails project acts as a quick
-demo for seeing it run in action.
+gilt-js-api.js is the actual api script, while opening index.html inside of the demo directory will run a small demo application using the api.
 
 To use this script, add it to your document and create a new api object from the GiltApi 
 constructor.  You also need to pass in your API key into the constructor as part of instantiation.
