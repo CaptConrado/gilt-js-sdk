@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gilt JS API Test</title>
+    <style type="text/css" media="screen">
+      body {
+        font-family: Helvetica;
+        font-size: 18px;
+        height:100%;
+        margin: auto;
+        padding: 0;
+        background: whitesmoke;
+      }
+      
+      #buttons-holder {
+        width: 150px !important;
+      }
+      
+      #buttons-holder button{
+        display: block;
+        padding: .5em;
+        margin: 1em;
+      }
+      
+      #init {
+        margin-top: 20%;
+        text-align: center;
+      }
+      
+      #init input {
+        width: 230px;
+        padding: .5em .25em;
+      }
+      
+      #keysubholder {
+        width: 60px;
+        display: inline-block;
+      }
+      
+      #submitkey {
+        width: 100%;
+        display: none;
+      }
+      
+      #content {
+        display: none;
+      }
+      
+      .left {
+        float: left;
+      }
+      
+      .right {
+        float: right;
+      }
+      
+      .column {
+        display: inline-block;
+        width: 30%;
+        height: 100%;
+        font-size: 14px;
+      }
+      
+    </style>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/javascripts/gilt-js-api.js"></script>
+    <script type="text/javascript" src="/javascripts/test.js"></script>
+  </head>
+  <body>
+    <div id="init">
+      <label for="key">Enter your API Key:</label>
+      <input name="key" id="apikey"></input>
+      <div id="keysubholder">
+        <button id="submitkey">Submit</button>
+      </div>
+    </div>
+    <div id="content">
+      <div id="buttons-holder" class="left column">
+        <button id="getcurrent">Get Current Sales</button>
+        <button id="getupcoming">Get Upcoming Sales</button>
+      </div>
+      <div id="sale-holder" class="left column">
+      </div>
+      <div id="product-holder" class="left column">
+      </div>
+    </div>
+    <div style="clear: all;"></div>
+  </body>
+</html>

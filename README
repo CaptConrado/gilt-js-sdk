@@ -1,0 +1,51 @@
+Gilt Groupe JavaScript (jQuery) Public API
+
+Christopher Young-Zawada
+Copyright Gilt Groupe 2012
+
+This is a jQuery-based implementation of the the Gilt Groupe Public API.  This script allows
+simple access to Gilt Groupe sales and product data using AJAX and returns the data as JSON.
+
+The script can be found at public/javascripts/gilt-js-api.js, while this rails project acts as a quick
+demo for seeing it run in action.
+
+To use this script, add it to your document and create a new api object from the GiltApi 
+constructor.  You also need to pass in your API key into the constructor as part of instantiation.
+
+example:
+
+var api = new GiltApi('apiKeyString');
+
+With an api instance, you can access active and upcoming sales data, and active products data.
+The methods included in GiltApi are:
+
+.getSales([ callback, upcoming, storeName ]);
+  -Gets all active sales on gilt.com from Men, Women, Kids and Home sales.
+  -Passing true to the second parameter returns upcoming sales instead of active sales.
+  -Passing a store name (ie: "women") into the third parameter returns sales only for that store.
+
+.getSaleDetail( storeName, saleKey[, callback ]);
+  -Returns sale detail for only one specific sale.
+  -saleKey can be found inside of a sale object from getSales with the key 'sale-key'
+
+.getProducts([ callback storeName ]);
+  -Returns all of the products that are currently on the gilt.com from Men, Women, Kids and Home.
+  -Passing a store name (ie: "women") into the second parameter returns products only for that store.
+  
+.getProductDetail( productUrl[, callback ]);
+  -Returns product detail for a single product.
+  -productUrl values can be found by iterating over returned values of .getProducts();
+  
+  
+Every method returns an object to its callback function. Using the API may look something like this:
+
+api.getSales(
+  function( sales ) {
+    for ( sale in sales ) {
+      ...
+    }
+  }, true, 'kids') ;
+  
+
+Note:  Every method is asynchronous, so using callbacks is practically required.  The only reason that
+missing callbacks do not throw exceptions are due to enable jQuery Deferreds.
