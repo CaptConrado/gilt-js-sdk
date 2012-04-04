@@ -96,12 +96,14 @@ Copyright Gilt Groupe 2012
         //iterate over the sales data and get the products for each sale
         function getProductsFromSales( sales ) {
         
-            var products = [];
+            var products = [],
+                key,
+                product;
       
-            for ( var key in sales ) {
+            for ( key in sales ) {
                 if ( sales.hasOwnProperty( key ) ) {
                     var sale = sales[ key ];
-                    for ( var product in sale.products ) {
+                    for ( product in sale.products ) {
                         if ( sale.products.hasOwnProperty( product ) ) {
                             products.push( sale.products[ product ] ); 
                         }
