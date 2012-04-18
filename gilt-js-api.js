@@ -14,7 +14,7 @@ Copyright Gilt Groupe 2012
             apiObj = { apikey : apiKey };
       
         //api key validation
-        if ( typeof apiKey !== "string" || !apiKey ) {
+        if ( typeof apiKey !== "string" ) {
             errorHandler( "Invalid API Key" );
         }
     
@@ -66,7 +66,7 @@ Copyright Gilt Groupe 2012
         //builds a path to the desired sales data
         function salesQuery( storeName, fileName, saleKey ) {
 
-            if ( typeof storeName === "string ") {
+            if ( typeof storeName === "string" ) {
                 storeName.toLowerCase();
             } else {
                 storeName = ""; 
